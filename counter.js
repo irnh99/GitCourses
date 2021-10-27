@@ -3,7 +3,10 @@ function addPlus() {
   let counters = Array.from(document.getElementsByClassName("counter"));
   let plusButton = Array.from(
     document.getElementsByClassName("counter-plus-btn")
-  );
+    );
+    let minusButton = Array.from(
+      document.getElementsByClassName("counter-minus-btn")
+      );
 
   counters.forEach((counter) => {
     counter.innerHTML = c;
@@ -12,6 +15,15 @@ function addPlus() {
   plusButton.forEach((button) => {
     button.addEventListener("click", (x) => {
       c++;
+      counters.forEach((counter) => {
+        counter.innerHTML = c;
+      });
+    });
+  });
+
+  minusButton.forEach((button) => {
+    button.addEventListener("click", (x) => {
+      c--;
       counters.forEach((counter) => {
         counter.innerHTML = c;
       });
